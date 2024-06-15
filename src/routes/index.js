@@ -14,5 +14,16 @@ router.get('/TerminosCondiciones', (req, res) => {
   res.render('pages/terminos', { title: 'Express' });
 });
 
+router.get('/home', (req, res) => {
+  res.render('pages/home', { title: 'Express' });
+});
+router.get('/datos',(req,res)=>{
+  res.render('pages/datos', { title: 'Express' });
+})
+router.get('/preEleccion',(req,res)=>{
+  res.render('pages/preEleccionMateria', { title: 'Express' });
+})
+
+
 
 module.exports = router;

@@ -42,7 +42,7 @@ h3 {
   height: 48px;
 }
 
-/*ESTILOS DEL MAIN(CENTRO)*/
+
 
 .Centro {
   display: flex;
@@ -66,10 +66,8 @@ h3 {
   transition: 0.5s ease;
 }
 
-.Derecha {
-  display: flex;
-  justify-content: end;
-}
+/*ESTILOS DEL MAIN(CENTRO)*/
+
 
 .lista {
   display: flex;
