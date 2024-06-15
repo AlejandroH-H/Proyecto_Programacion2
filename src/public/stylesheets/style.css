@@ -2,12 +2,15 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-h3{
+h3 {
   margin: 0;
 }
-p{
+p {
+  margin: 0px;
+}
+.pa {
   margin: 5px;
 }
 
@@ -23,7 +26,7 @@ p{
   margin-bottom: 2px;
 }
 
-.encabezados{
+.encabezados {
   width: 500px;
   height: 50px;
 }
@@ -33,10 +36,10 @@ p{
   justify-content: center;
   align-items: center;
   gap: 10px;
-color: white;
+  color: white;
 }
 
-.imagen{
+.imagen {
   width: 100px;
   height: 48px;
 }
@@ -47,29 +50,28 @@ color: white;
   align-items: center;
   gap: 20px;
 }
-.boton__centro{
+.boton__centro {
   height: 50px;
   width: 100px;
   border: none;
-  background-color:  rgba(0, 0, 0, 0.87); 
+  background-color: rgba(0, 0, 0, 0.87);
   cursor: pointer;
-  transition: .5s ease;
+  transition: 0.5s ease;
   color: white;
 }
 
-.boton__centro:hover{
+.boton__centro:hover {
   color: white;
   background-color: rgb(11, 60, 167);
-  transition: .5s ease;
+  transition: 0.5s ease;
 }
-
 
 .Derecha {
   display: flex;
-justify-content: end;
+  justify-content: end;
 }
 
-.lista{
+.lista {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -78,18 +80,18 @@ justify-content: end;
   align-items: center;
 }
 
-.opcion{
+.opcion {
   text-align: center;
-  height: 20px ;
+  height: 20px;
   border-radius: 10px;
   cursor: pointer;
-transition: .5s ease;
+  transition: 0.5s ease;
 }
 
-.opcion:hover{
+.opcion:hover {
   background-color: rgb(24, 14, 168);
   color: white;
-  transition: .5s ease;
+  transition: 0.5s ease;
 }
 
 .centro {
@@ -128,7 +130,7 @@ transition: .5s ease;
   color: rgb(245, 245, 245);
 }
 
-.inpust{
+.inpust {
   height: 50px;
   width: 400px;
   border-radius: 4px;
@@ -136,20 +138,20 @@ transition: .5s ease;
   background-color: #151d24;
   border: 1px solid #1f53c5;
 }
-.a{
+.a {
   color: rgb(6, 6, 58);
 }
-.botones{
+.botones {
   width: 200px;
   height: 50px;
   color: white;
   background-color: rgb(8, 8, 197);
   cursor: pointer;
-  transition: .5s ease;
+  transition: 0.5s ease;
   border: none;
 }
 
-.botones:hover{
+.botones:hover {
   background-color: rgb(8, 8, 139);
 }
 
@@ -161,10 +163,15 @@ transition: .5s ease;
   align-items: center;
   background-color: rgb(99, 97, 97);
   color: white;
+  gap: 70px;
 }
 
-.columna{
-display: flex;
-flex-direction: column;
-margin-left: 20px;
+.columna {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+.imagenFooter{
+  width: 70px;
+  height: 70px;
 }
