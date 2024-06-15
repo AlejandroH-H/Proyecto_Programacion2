@@ -7,11 +7,12 @@ router.get('/', (req, res) => {
 });
 
 router.get('/inicio', (req, res) => {
-  res.render('pages/home', { title: 'Express' });
+  res.render('pages/inicioDeSesion', { title: 'Express' });
 });
 
 router.get('/TerminosCondiciones', (req, res) => {
   res.render('pages/terminos', { title: 'Express' });
 });
+
 
 module.exports = router;
