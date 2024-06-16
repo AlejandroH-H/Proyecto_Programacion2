@@ -6,6 +6,9 @@ const morgan = require('morgan');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+const sessionRouter = require('./routes/session.routes');
+const registerRouter = require('./routes/register.routes');
+const homeRouter = require('./routes/home.routes');
 
 const app = express();
 
@@ -21,6 +24,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //Rutas Principales
 app.use(indexRouter);
+
+app.use(sessionRouter);
+app.use(registerRouter);
+app.use(homeRouter);
+
 app.use(usersRouter);
 
 

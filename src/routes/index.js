@@ -3,25 +3,17 @@ const router = express.Router();
 
 /* GET home page. */
 router.get('/', (req, res) => {
-  res.render('pages/index', { title: 'Express' });
-});
-
-router.get('/inicio', (req, res) => {
-  res.render('pages/inicioDeSesion', { title: 'Express' });
-});
-
-router.get('/TerminosCondiciones', (req, res) => {
-  res.render('pages/terminos', { title: 'Express' });
+  res.render('pages/index');
 });
 
 router.get('/home', (req, res) => {
-  res.render('pages/home', { title: 'Express' });
+  res.render('pages/home');
 });
 router.get('/datos',(req,res)=>{
-  res.render('pages/datos', { title: 'Express' });
+  res.render('pages/datos');
 })
 router.get('/preEleccion',(req,res)=>{
-  res.render('pages/preEleccionMateria', { title: 'Express' });
+  res.render('pages/preEleccionMateria');
 })
 
 

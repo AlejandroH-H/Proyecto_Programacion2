@@ -1,25 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../.././stylesheets/style.css">
-  <title>inicio de sesion </title>
-</head>
-<body>
-  <%- include('../partials/header.ejs'); %>
-<main class="centro centro--inicioDeSesion">
-<form action="">
-  <div class="registro inicioDeSesion">
-    <h1>inicio de sesion</h1>
-    <input type="text" class="inpust InpustDeInicioDeSesion" placeholder="correo">
-    <input type="text" class="inpust InpustDeInicioDeSesion" placeholder="contraseña">
-    <p class="pa">Estoy de acuerdo con <a href="/TerminosCondiciones" class="a">Termino y Condiciones</a></p>
-    <button class="botones Botones--inicioDeSesion">iniciar sesion</button>
-    <p class="pa"><a href="/" class="a">¿no tienes una cuenta?, registrate!</a></p>
-  </div>
-</form>
-</main>
-<%- include('../partials/footer.ejs'); %>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../.././stylesheets/style.css" />
+    <title>inicio de sesion</title>
+  </head>
+  <body>
+    <%- include('../partials/header.ejs'); %>
+    <main class="centro centro--inicioDeSesion">
+      <form method="POST">
+        <div class="registro inicioDeSesion">
+          <h1>inicio de sesion</h1>
+          <input
+            type="text"
+            name="email"
+            class="inpust InpustDeInicioDeSesion"
+            placeholder="correo"
+          />
+          <input
+            type="text"
+            name="password"
+            class="inpust InpustDeInicioDeSesion"
+            placeholder="contraseña"
+          />
+          <p class="pa">
+            Estoy de acuerdo con
+            <a href="/TerminosCondiciones" class="a">Termino y Condiciones</a>
+          </p>
+          <button type="submit" class="botones Botones--inicioDeSesion">
+            iniciar sesion
+          </button>
+          <p class="pa">
+            <a href="/register" class="a"
+              >¿no tienes una cuenta?, registrate!</a
+            >
+          </p>
+        </div>
+      </form>
+    </main>
+    <%- include('../partials/footer.ejs'); %>
+  </body>
 </html>
