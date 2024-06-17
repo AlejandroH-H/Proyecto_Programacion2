@@ -8,6 +8,10 @@
   </head>
   <body>
     <%- include('../partials/header.ejs'); %>
+    <% if (login) { %>
+      <h2>Bienvenido Estudiante <%= name %></h2>
+      <div class="cerrar_boton"><a href="/logout" class="cerrar">Cerrar Sesión</a></div>
+    <% } %>
     <main class="centro">
 
     <div class="contenedor">

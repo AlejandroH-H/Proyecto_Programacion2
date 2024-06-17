@@ -6,9 +6,7 @@ router.get('/', (req, res) => {
   res.render('pages/index');
 });
 
-router.get('/home', (req, res) => {
-  res.render('pages/home');
-});
+
 router.get('/datos',(req,res)=>{
   res.render('pages/datos');
 })

@@ -6,6 +6,7 @@ create table estudiantes(
     name varchar(50) not null,
     lastname varchar(50) not null,
     age int not null,
+    email varchar(100) not null,
     cedula int not null,
     password varchar(100) not null,
     unidadCredito int not null,

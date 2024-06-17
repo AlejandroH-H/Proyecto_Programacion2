@@ -212,3 +212,28 @@ border-bottom-right-radius:20px ;
   background: #3908c0 ;
   transition: .5s ease;
 }
+
+.cerrar_boton{
+  display: flex;
+  justify-content: center;
+}
+
+.cerrar{
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: #3908c0;
+  width: 20%;
+  margin: 5px 0;
+  color: black;
+  border: 2px solid black;
+}
+
+.cerrar:hover{
+  background-color: #422c8094;
+  padding: 8px;
+  transition: 0.3s;
+  border: 3px solid black;
+}

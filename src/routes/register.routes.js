@@ -1,11 +1,11 @@
 const { Router } = require('express');
-const { getRegister, postRegister ,terminosCond } = require('../controllers/register.controller');
+const { getRegister, postRegisterStudent ,terminosCond } = require('../controllers/register.controller');
 
 const router = Router();
 
 router.get('/register', getRegister);
 
-router.post('/register', postRegister);
+router.post('/register', postRegisterStudent);
 
 router.get('/register/terminos_Condiciones', terminosCond);
 

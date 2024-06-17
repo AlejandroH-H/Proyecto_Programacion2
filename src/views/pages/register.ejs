@@ -10,53 +10,41 @@
       <div class="bienvenido">
         <h1>welcome!!!</h1>
       </div>
-      <form method="POST">
+      <form action="/register" method="POST">
         <div class="registro">
           <h1>Registrate aquí</h1>
-          <input type="text" name="name" class="inpust" placeholder="nombre" required/>
+          <input type="text" name="name" class="inpust" placeholder="Ingresa el Nombre" required/>
           <input
             type="text"
             name="lastname"
             class="inpust"
-            placeholder="apellido"
+            placeholder="Ingresa el Apellido"
             required
           />
+          <input type="text" name="age" class="inpust" placeholder="Ingresa tu Edad" required>
           <input
             type="email"
             name="email"
             class="inpust"
-            placeholder="correo"
+            placeholder="Ingresa el Correo Electrónico"
             required
           />
           <!-- Hay que pedir el tipo de documento -->
           <input
             type="number"
-            name="id"
+            name="cedula"
             class="inpust"
-            placeholder="cedula"
+            placeholder="Ingresa tu cédula"
             value="0"
             min="0"
             max="32700000"
             required
           />
-          <select name="semestre" class="inpust" required>
-            <option value="" selected disabled>semestre actual</option>
-            <option value="first">Primer Semestre</option>
-            <option value="second">Segundo Semestre</option>
-            <option value="third">Tercer Semestre</option>
-            <option value="fourth">Cuarto Semestre</option>
-            <option value="fifth">Quinto Semestre</option>
-            <option value="sixth">Sexto Semestre</option>
-            <option value="seventh">Séptimo Semestre</option>
-            <option value="eight">Octavo Semestre</option>
-            <option value="nineth">Noveno Semestre</option>
-            <option value="tenth">Décimo Semestre</option>
-          </select>
           <input
             type="password"
             name="password"
             class="inpust"
-            placeholder="contraseña"
+            placeholder="Crea tu Contraseña"
             required
           />
           <p class="pa">
@@ -72,6 +60,23 @@
         </div>
       </form>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <% if(typeof alert != "undefined") { %>
+      <script>
+        Swal.fire({
+          title: '<%= alertTitle %>',
+          text: '<%= alertMessage %>',
+          icon: '<%= alertIcon %>',
+          showConfirmButtom: '<%= showConfirmButtom %>',
+          timer: '<%= timer %>'
+        }).then(() => {
+          window.location = '/<%= ruta %>'
+        })
+      </script>
+      <% } %>
+
+
+
     <%- include('../partials/footer.ejs'); %>
   </body>
 </html>

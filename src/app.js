@@ -3,6 +3,8 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const morgan = require('morgan');
+const dotenv = require('dotenv');
+const session = require('express-session');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -14,6 +16,7 @@ const app = express();
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+dotenv.config({path: './env/.env'});
 
 //Middlewares
 app.use(morgan('dev'));
@@ -21,12 +24,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  secret: 'secret',
+  resave: true,
+  saveUninitialized: true
+}));
 
 //Rutas Principales
 app.use(indexRouter);
 
 app.use(sessionRouter);
 app.use(registerRouter);
+
+
 app.use(homeRouter);
 
 app.use(usersRouter);
