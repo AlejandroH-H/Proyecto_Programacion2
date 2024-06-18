@@ -8,7 +8,9 @@ h3 {
   margin: 0;
 }
 
-
+h1{
+  color: white;
+}
 
 /* ESTILOS DEL HEADER*/
 
@@ -29,12 +31,38 @@ h3 {
   height: 50px;
 }
 
-.logo {
+.contenedor{
+  height: 400px;
+  width: 50vw;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  color: white;
+  flex-direction: column;
+  perspective: 500px;
+
+}
+
+.logo {
+width: 40px;
+height: 40px;
+  background: url(../image/flux-svgrepo-com.svg);
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  margin-right: 300px;
+  filter: drop-shadow( 0px 7px 7px blue);
+  animation: rotar 5s linear infinite;
+}
+
+
+@keyframes rotar{
+  from{
+    transform: rotateY(180deg)
+
+  }
+  to{
+    transform: rotateY(-180deg);
+  }
 }
 
 .imagen {
@@ -65,6 +93,7 @@ h3 {
   background-color: rgb(11, 60, 167);
   transition: 0.5s ease;
 }
+
 
 /*ESTILOS DEL MAIN(CENTRO)*/
 
@@ -114,6 +143,7 @@ h3 {
   justify-content: center;
   align-items: center;
   font-size: 19px;
+  box-shadow: 16px 14px 20px #0000008c;
 }
 
 .registro {
@@ -126,8 +156,10 @@ h3 {
   align-items: center;
   gap: 10px;
   color: rgb(245, 245, 245);
-
+  box-shadow: 16px 14px 20px #0000008c;
 }
+
+
 
 .inpust {
   height: 50px;
@@ -201,7 +233,6 @@ p {
   align-items: center;
   gap: 15px;
   background-color: rgb(2, 15, 32);
-
 }
 .titulo{
   margin-top: 20px;
@@ -214,6 +245,7 @@ p {
   justify-content: center;
   align-items: center;
   font-size: 15px;
+  box-shadow: 16px 14px 20px #0000008c;
 }
 
 .TerminosYServicios{
@@ -228,6 +260,7 @@ p {
   border-radius: 10px;
   color: rgb(238, 238, 238);
   padding: 4px;
+  box-shadow: 16px 14px 20px #0000008c;
 }
 
 /* inicio de sesion */
