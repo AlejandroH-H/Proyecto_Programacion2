@@ -10,8 +10,8 @@ const postSession = async (req, res) => {
     const password = req.body.password;
 
     let encryp = await bcrypt.hash(password, 8);
-
-    if (email && password) {
+    
+    if (email&&password) {
         connection.query('SELECT * FROM estudiantes WHERE email = ?', [email], async(error, result)=>{
             if (result.length == 0 || !(await bcrypt.compare(password, result[0].password))) {
                 res.render('pages/inicioDeSesion', {

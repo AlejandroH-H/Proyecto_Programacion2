@@ -7,7 +7,6 @@ const dotenv = require('dotenv');
 const session = require('express-session');
 
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
 const sessionRouter = require('./routes/session.routes');
 const registerRouter = require('./routes/register.routes');
 const homeRouter = require('./routes/home.routes');
@@ -36,12 +35,7 @@ app.use(indexRouter);
 app.use(sessionRouter);
 app.use(registerRouter);
 
-
 app.use(homeRouter);
-
-app.use(usersRouter);
-
-
 // catch 404 and forward to error handler
 app.use((req,res,next) => {
   next(createError(404));
