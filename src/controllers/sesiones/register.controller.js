@@ -1,14 +1,14 @@
 const bcrypt = require('bcrypt');
-const { connection } = require('../db');
+const { connection } = require('../../db');
 
 const getRegister = (req, res) => {
     if (req.session.loggedin == true) {
-        res.render('pages/home', {
+        res.render('pages/pagesPrincipal/home', {
           login: true,
           name: req.session.name
         });
     }else{
-        res.render('pages/register');
+        res.render('pages/sesiones/register');
     }
 };
 
@@ -24,7 +24,7 @@ const postRegisterStudent = async (req, res) => {
 
     connection.query('SELECT * FROM estudiantes WHERE email = ?', [email], async(error, result) => {
         if (result.length > 0) {
-            res.render('pages/register', {
+            res.render('pages/sesiones/register', {
                 alert: true,
                 alertTitle: 'Error!',
                 alertMessage: "Ya tiene una cuenta creada!",
@@ -38,7 +38,7 @@ const postRegisterStudent = async (req, res) => {
                 if (error) {
                     console.log(error);
                 }else{
-                    res.render('pages/register', {
+                    res.render('pages/sesiones/register', {
                         alert: true,
                         alertTitle: 'Registro',
                         alertMessage: "Registro Exitoso :D",

@@ -3,7 +3,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   if (req.session.loggedin == true) {
-    res.render('pages/home', {
+    res.render('pages/pagePrincipal/home', {
       login: true,
       name: req.session.name
     });

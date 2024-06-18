@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { getRegister, postRegisterStudent ,terminosCond } = require('../controllers/register.controller');
+const { getRegister, postRegisterStudent ,terminosCond } = require('../../controllers/sesiones/register.controller');
 
 const router = Router();
 

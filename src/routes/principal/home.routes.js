@@ -4,7 +4,7 @@ const router = Router();
 
 router.get('/home', (req, res) => {
     if (req.session.loggedin == true) {
-      res.render('pages/home', {
+      res.render('pages/pagesPrincipal/home', {
         login: true,
         name: req.session.name
       });
@@ -15,7 +15,7 @@ router.get('/home', (req, res) => {
 
 router.get('/datos',(req,res)=>{
   if(req.session.loggedin == true) {
-    res.render('pages/datos', {
+    res.render('pages/pagesPrincipal/datos', {
       login: true,
       name: req.session.name
     });
@@ -26,7 +26,7 @@ router.get('/datos',(req,res)=>{
 
 router.get('/preEleccion',(req,res)=>{
   if (req.session.loggedin == true) {
-    res.render('pages/preEleccionMateria', {
+    res.render('pages/pagesPrincipal/preEleccionMateria', {
       login: true,
       name: req.session.name
     });

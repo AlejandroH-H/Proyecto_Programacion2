@@ -7,9 +7,9 @@ const dotenv = require('dotenv');
 const session = require('express-session');
 
 const indexRouter = require('./routes/index');
-const sessionRouter = require('./routes/session.routes');
-const registerRouter = require('./routes/register.routes');
-const homeRouter = require('./routes/home.routes');
+const sessionRouter = require('./routes/sesion/session.routes');
+const registerRouter = require('./routes/sesion/register.routes');
+const homeRouter = require('./routes/principal/home.routes');
 
 const app = express();
 
@@ -39,7 +39,7 @@ app.use(homeRouter);
 
 app.get('/', (req, res) => {
   if (req.session.loggedin == true) {
-    res.render('pages/home', {
+    res.render('pages/pagesPrincipal/home', {
       login: true,
       name: req.session.name
     });
