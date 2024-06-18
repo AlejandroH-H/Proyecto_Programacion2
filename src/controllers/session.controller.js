@@ -2,16 +2,21 @@ const bcrypt = require('bcrypt');
 const { connection }= require('../db');
 
 const getSession = (req, res) => {
-    res.render('pages/inicioDeSesion');
+    if (req.session.loggedin == true) {
+        res.render('pages/home', {
+          login: true,
+          name: req.session.name
+        });
+    }else{
+        res.render('pages/inicioDeSesion');
+    }
 };
 
 const postSession = async (req, res) => {
     const email = req.body.email;
     const password = req.body.password;
-
-    let encryp = await bcrypt.hash(password, 8);
     
-    if (email&&password) {
+    if (email && password) {
         connection.query('SELECT * FROM estudiantes WHERE email = ?', [email], async(error, result)=>{
             if (result.length == 0 || !(await bcrypt.compare(password, result[0].password))) {
                 res.render('pages/inicioDeSesion', {

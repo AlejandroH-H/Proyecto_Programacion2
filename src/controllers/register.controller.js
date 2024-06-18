@@ -2,7 +2,14 @@ const bcrypt = require('bcrypt');
 const { connection } = require('../db');
 
 const getRegister = (req, res) => {
-    res.render('pages/register');
+    if (req.session.loggedin == true) {
+        res.render('pages/home', {
+          login: true,
+          name: req.session.name
+        });
+    }else{
+        res.render('pages/register');
+    }
 };
 
 const postRegisterStudent = async (req, res) => {

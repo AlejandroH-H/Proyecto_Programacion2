@@ -3,22 +3,36 @@ const { Router } = require('express');
 const router = Router();
 
 router.get('/home', (req, res) => {
-    if (req.session.loggedin) {
+    if (req.session.loggedin == true) {
       res.render('pages/home', {
         login: true,
         name: req.session.name
       });
     }else{
-      res.render('pages/inicioDeSesion')
+      res.redirect('/session');
     }
 });
 
 router.get('/datos',(req,res)=>{
-  res.render('pages/datos');
+  if(req.session.loggedin == true) {
+    res.render('pages/datos', {
+      login: true,
+      name: req.session.name
+    });
+  }else{
+    res.redirect('/session');
+  }
 })
 
 router.get('/preEleccion',(req,res)=>{
-  res.render('pages/preEleccionMateria');
+  if (req.session.loggedin == true) {
+    res.render('pages/preEleccionMateria', {
+      login: true,
+      name: req.session.name
+    });
+  }else{
+    res.redirect('/session');
+  }
 })
 
 router.get('/logout', (req, res) => {

@@ -36,6 +36,17 @@ app.use(sessionRouter);
 app.use(registerRouter);
 
 app.use(homeRouter);
+
+app.get('/', (req, res) => {
+  if (req.session.loggedin == true) {
+    res.render('pages/home', {
+      login: true,
+      name: req.session.name
+    });
+  }else{
+    res.redirect('/');
+  }
+});
 // catch 404 and forward to error handler
 app.use((req,res,next) => {
   next(createError(404));
